@@ -1,0 +1,23 @@
+cd ~/klipper-backup
+sudo rm -r .git
+git init
+git add .
+git commit -m "create repository"
+git branch -M main
+git remote add origin https://github.com/acaz2000/klipper.git
+git push -u origin main
+
+crontab -l | { cat; echo "@reboot /home/aca/klipper-backup/script.sh"; } | crontab -
+
+path_adaptivemeshingcfg=/home/aca/printer_data/config/AdaptiveMeshing.cfg
+path_adaptivepurgecfg=/home/aca/printer_data/config/AdaptivePurge.cfg
+path_arduinounocfg=/home/aca/printer_data/config/ardinoUno.cfg
+path_crowsnestcfg=/home/aca/printer_data/config/crowsnest.conf
+path_klackendercfg=/home/aca/printer_data/config/KlackEnder.cfg
+path_mainsailcfg=/home/aca/printer_data/config/mainsail.cfg
+path_moonrakercfg=/home/aca/printer_data/config/moonraker.conf
+path_printercfg=/home/aca/printer_data/config/printer.cfg
+path_telegramcfg=/home/aca/printer_data/config/telegram.conf
+path_timelapsecfg=/home/aca/printer_data/config/timelapse.cfg
+
+
